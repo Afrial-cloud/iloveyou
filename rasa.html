@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menyatakan Rasa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f0;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ff69b4;
+        }
+        .emoji-nangis {
+        font-size: 50px;
+        animation: move 2s infinite;
+        }
+        @keyframes move {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+        }
+
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        textarea {
+            width: 80%;
+            height: 150px;
+            margin: 20px 0;
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 8px;
+            border: 2px solid #ff69b4;
+            resize: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pliss Cerita dong Sayang!!<p class="emoji-nangis">😢</p></h1>
+    <p>Isi pesan di bawah ini untuk mengungkapkan perasaanmu.</p>
+    
+    <!-- Form untuk Menyatakan Rasa -->
+    <form id="loveForm">
+        <textarea id="message" placeholder="Tuliskan rasa cintamu di sini..."></textarea><br>
+        <button type="button" onclick="sendMessage()">Kirim ke WhatsApp</button>
+    </form>
+
+    <!-- Script untuk mengirim pesan melalui WhatsApp -->
+    <script>
+        function sendMessage() {
+            var message = document.getElementById('message').value;
+            if (message.trim() === "") {
+                alert("Harap tulis pesan terlebih dahulu!");
+                return;
+            }
+            var whatsappLink = "https://wa.me/6288227348541?text=" + encodeURIComponent(message);
+            window.open(whatsappLink, "_blank");
+        }
+    </script>
+</body>
+</html>

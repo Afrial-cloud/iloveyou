@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Romantis Untuk Pacar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fce4ec;
+            color: #333;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            position: relative;
+             /* Menyembunyikan overflow untuk mencegah scroll */
+            height: 100vh; /* Membatasi tinggi halaman agar tidak bisa digeser */
+        }
+
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .photo-container {
+            position: relative;
+            width: 100%;
+            max-width: 150px;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            border: 3px solid #e91e63;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .photo-container:hover img {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 5px;
+            border-radius: 5px;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .photo-container:hover .photo-caption {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        h1 {
+            color: #e91e63;
+            margin-top: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+
+        .heart {
+            color: #e91e63;
+            font-size: 50px;
+            margin: 20px 0;
+        }
+
+        .button {
+            background-color: #e91e63;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #d81b60;
+            transform: scale(1.1);
+        }
+
+        .music-button {
+            background-color: #d81b60;
+            font-size: 18px;
+            padding: 15px 40px;
+            border-radius: 30px;
+        }
+
+        .music-button:hover {
+            background-color: #d81b60;
+        }
+
+        audio {
+            margin-top: 20px;
+        }
+
+        /* Efek Love tanpa menyala */
+        .heart-image {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+
+        /* Efek Hujan Love */
+        .heart-fall {
+            position: absolute;
+            top: -50px;
+            font-size: 25px;
+            color: #e91e63;
+            animation: fall 3s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            0% {
+                top: -50px;
+                opacity: 1;
+            }
+            100% {
+                top: 100vh;
+                opacity: 0;
+            }
+        }
+
+        /* Membuat lebih banyak hati */
+        .heart-fall:nth-child(1) {
+            left: 5%;
+            animation-duration: 4s;
+            animation-delay: 0s;
+        }
+
+        .heart-fall:nth-child(2) {
+            left: 15%;
+            animation-duration: 5s;
+            animation-delay: 1s;
+        }
+
+        .heart-fall:nth-child(3) {
+            left: 25%;
+            animation-duration: 4.5s;
+            animation-delay: 0.5s;
+        }
+
+        .heart-fall:nth-child(4) {
+            left: 35%;
+            animation-duration: 6s;
+            animation-delay: 2s;
+        }
+
+        .heart-fall:nth-child(5) {
+            left: 45%;
+            animation-duration: 4.2s;
+            animation-delay: 0.8s;
+        }
+
+        .heart-fall:nth-child(6) {
+            left: 55%;
+            animation-duration: 5s;
+            animation-delay: 1.5s;
+        }
+
+        .heart-fall:nth-child(7) {
+            left: 65%;
+            animation-duration: 4.8s;
+            animation-delay: 2.5s;
+        }
+
+        .heart-fall:nth-child(8) {
+            left: 75%;
+            animation-duration: 5.5s;
+            animation-delay: 3s;
+        }
+
+        .heart-fall:nth-child(9) {
+            left: 85%;
+            animation-duration: 4.5s;
+            animation-delay: 1.2s;
+        }
+
+        .heart-fall:nth-child(10) {
+            left: 95%;
+            animation-duration: 5s;
+            animation-delay: 0.7s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Pindahkan gambar love ke atas judul -->
+    <img src="love.png" alt="Love" class="heart-image">
+
+    <h1>Selamat datang di Halaman Romantis untukmu, Sayang!</h1>
+
+    <!-- Tombol Play Musik di atas -->
+    <button class="button music-button" onclick="document.querySelector('audio').play()">Play Musik</button>
+
+    <!-- Hujan Love -->
+    <div class="heart-fall">❤️</div>
+    <div class="heart-fall">❤️</div>
+    <div class="heart-fall">❤️</div>
+    <div class="heart-fall">❤️</div>
+    <div class="heart-fall">❤️</div>
+    <div class="heart-fall">❤️</div>
+    <div class="heart-fall">❤️</div>
+    <div class="heart-fall">❤️</div>
+    <div class="heart-fall">❤️</div>
+    <div class="heart-fall">❤️</div>
+
+    <div class="photo-gallery">
+        <!-- Foto dengan nomor dan efek, plus kata-kata romantis dalam bahasa Jawa -->
+        <div class="photo-container">
+            <img src="1.jpg" alt="Foto 1">
+            <div class="photo-caption">"Tresnaku marangmu tanpa wates."</div>
+        </div>
+        <div class="photo-container">
+            <img src="2.jpg" alt="Foto 2">
+            <div class="photo-caption">"Saben detik karo kowe iku anugerah."</div>
+        </div>
+        <div class="photo-container">
+            <img src="3.jpg" alt="Foto 3">
+            <div class="photo-caption">"Kowe iku ngimpi sing dadi nyata."</div>
+        </div>
+        <div class="photo-container">
+            <img src="4.jpg" alt="Foto 4">
+            <div class="photo-caption">"Aku bakal tansah tresna marangmu."</div>
+        </div>
+        <div class="photo-container">
+            <img src="5.jpg" alt="Foto 5">
+            <div class="photo-caption">"Nalika kita bebarengan, jagad iki kaya sampurna."</div>
+        </div>
+        <div class="photo-container">
+            <img src="6.jpg" alt="Foto 6">
+            <div class="photo-caption">"Kowe iku kebahagiaan ing uripku."</div>
+        </div>
+        <div class="photo-container">
+            <img src="7.jpg" alt="Foto 7">
+            <div class="photo-caption">"Saben langkah kita bebarengan iku petualangan."</div>
+        </div>
+        <div class="photo-container">
+            <img src="8.jpg" alt="Foto 8">
+            <div class="photo-caption">"Kowe iku cahya ing uripku."</div>
+        </div>
+        <div class="photo-container">
+            <img src="9.jpg" alt="Foto 9">
+            <div class="photo-caption">"Tresna kita iku crita sing endah."</div>
+        </div>
+        <div class="photo-container">
+            <img src="10.jpg" alt="Foto 10">
+            <div class="photo-caption">"Salawasé mung kowe sing ana ing atiku."</div>
+        </div>
+    </div>
+
+    <p>Setiap detik yang kita lewati bersama adalah hadiah yang tak ternilai. Kamu adalah alasan aku tersenyum setiap hari, dan hatiku selalu berdebar setiap kali memikirkan masa depan bersama kamu. Cinta kita adalah kisah yang akan terus aku tulis dengan penuh kebahagiaan dan kebersamaan. Aku ingin selalu mendengarkan tawa indahmu dan menemani setiap langkahmu dalam hidup ini. Terima kasih sudah menjadi bagian terindah dalam hidupku, dan aku berjanji untuk selalu mencintaimu selamanya. Kamu adalah segalanya bagiku.</p>
+
+    <p>Aku mencintaimu lebih dari kata-kata yang bisa diungkapkan. Setiap saat bersamamu adalah anugerah yang tak terlukiskan. Ketika aku melihat matamu, aku melihat dunia yang penuh harapan dan kebahagiaan. Tidak ada yang lebih indah daripada saat kita berdua saling berbagi mimpi dan berjuang bersama. Aku ingin menghabiskan setiap hari denganmu, mendukungmu, dan mencintaimu lebih dalam dari sebelumnya.</p>
+
+    <p>Jika hidup ini adalah sebuah lagu, maka kamu adalah melodi yang selalu aku dengar dalam hati. Kamu adalah bagian dari setiap napasku, dan tanpa dirimu, rasanya hidup ini tak lengkap. Aku berjanji akan selalu setia menemanimu, menjadi teman terbaikmu, dan seseorang yang akan terus mencintaimu tanpa syarat.</p>
+
+    <div class="heart">&#10084;&#10084;&#10084;</div>
+
+    <a href="rasa.html" class="button" target="_blank">Pencet dong Sayang!!</a>
+
+    <audio autoplay loop>
+        <source src="anugerah terindah.mp3" type="audio/mp3">
+        Browsermu tidak mendukung tag audio.
+    </audio>
+
+</body>
+</html>
