@@ -1,0 +1,300 @@
+/* Reset dan styling dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: #fff;
+    text-align: center;
+}
+
+/* Navbar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 105, 135, 0.9);
+    padding: 15px 0;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffe4e1;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Styling Tombol Musik */
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: transparent;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.music-player:hover {
+    background: transparent;
+}
+
+.music-player button {
+    background: url(play-icon.png);
+    border: none;
+    cursor: pointer;
+    outline: transparent;
+}
+
+.music-player img {
+    width: 30px;
+    height: 30px;
+}
+
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('bg.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-family: 'Pacifico', cursive;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Galeri dengan 20 Foto */
+.gallery-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.photo {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.photo img {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Rasio 16:9 agar seragam */
+    object-fit: cover;
+    border: 5px solid #ff6f61;
+    border-radius: 12px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Efek hover pada foto */
+.photo:hover img {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Overlay Kata-Kata Romantis */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-style: italic;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    border-radius: 12px;
+}
+
+/* Efek saat hover */
+.photo:hover .overlay {
+    opacity: 1;
+}
+
+/* Foto Utama dengan Rasio 4:3 */
+.utama img {
+    width: 50%; /* Ukuran lebih kecil agar tampak estetis */
+    max-width: 500px; /* Maksimal lebar */
+    aspect-ratio: 3 / 4; /* Mengatur rasio menjadi 3:4 */
+    object-fit: cover; /* Menjaga proporsi foto */
+    border: 8px solid #ff6f61;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .utama img {
+        width: 70%;
+        max-width: 400px;
+    }
+}
+
+/* Grid Foto */
+.gallery-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.gallery-images img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border: 5px solid #ff6f61;
+    border-radius: 12px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery-images img:hover {
+    transform: scale(1.07);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Quotes Section */
+.quotes {
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    padding: 60px 20px;
+    color: white;
+}
+
+.quotes h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.quotes-list p {
+    font-size: 1.4rem;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px auto;
+    max-width: 600px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Footer */
+footer {
+    background: #ff6f61;
+    color: white;
+    padding: 20px;
+    font-size: 1rem;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Tombol Ungkapkan Rasa */
+.express-love {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background: #ffe6e6;
+    border-radius: 12px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.express-love h2 {
+    color: #ff4d6d;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.express-love p {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.love-button {
+    display: inline-block;
+    background: #ff4d6d;
+    color: white;
+    font-size: 1.5rem;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+}
+
+.love-button:hover {
+    background: #ff1f4b;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 31, 75, 0.5);
+}
+
+
+/* Animasi */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .gallery-images {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .main-photo img {
+        width: 100%;
+    }
+}
